@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,11 +12,33 @@
             padding: 0;
             color: #333;
         }
+        /* Navbar */
+        .navbar {
+            background-color: #2a2a72;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .navbar a:hover {
+            background-color: #4e4e9e;
+        }
         header {
             background-color: #2a2a72;
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
+            margin-top: 50px;
         }
         header h1 {
             font-size: 2.8em;
@@ -27,6 +48,11 @@
             font-size: 1.2em;
             margin-top: 10px;
         }
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
         .intro p {
             font-size: 1.1em;
             line-height: 1.8em;
@@ -34,17 +60,11 @@
             max-width: 850px;
             margin: auto;
         }
-        .intro p {
-            font-size: 1.1em;
-            line-height: 1.8em;
-        }
         .card-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
+            margin-top: 30px;
         }
         .card {
             background: white;
@@ -77,15 +97,12 @@
             color: #555;
         }
         footer {
+            background-color: #2a2a72;
+            color: white;
             text-align: center;
             padding: 30px;
-            background: #2a2a72;
-            color: white;
             font-size: 0.9em;
-        }
-        a.card-link {
-            text-decoration: none;
-            color: inherit;
+            margin-top: 50px;
         }
         .badge {
             background-color: #e63946;
@@ -100,14 +117,24 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#quienes-somos">Quiénes Somos</a>
+        <a href="#revista">Revista</a>
+        <a href="#podcast">Podcast</a>
+        <a href="https://www.transanalyticsdata.com/" target="_blank">Ricardo Vásquez</a>
+    </div>
+
     <header>
         <h1>Human-IA: Tu Revista Digital</h1>
         <p>Explorando el impacto de la Inteligencia Artificial en la sociedad, la tecnología y la innovación.</p>
     </header>
 
-    <section class="intro">
-        <p>
-        Human-IA: Tu Revista Digital nace como una invitación a repensar la relación entre la inteligencia artificial y la humanidad.  
+    <section id="quienes-somos">
+        <h2>Quiénes Somos</h2>
+        <p class="intro">
+              Human-IA: Tu Revista Digital nace como una invitación a repensar la relación entre la inteligencia artificial y la humanidad.  
 <br>
 Es mucho más que una publicación: es un puente entre la tecnología emergente y las preguntas esenciales sobre quiénes somos, qué creamos y hacia dónde vamos. Cada edición es un espacio curado para explorar, imaginar y cuestionar el papel de la IA en nuestra cultura, nuestra ética y nuestras aspiraciones colectivas. No buscamos solo informar, sino provocar conversaciones, abrir ventanas a posibilidades y acompañar a los lectores en el desafío de integrar la inteligencia artificial en sus vidas de manera consciente y crítica.  
 <br>
@@ -134,39 +161,40 @@ Cada página es una invitación a descubrir, cuestionar y co-crear. Porque la in
         </p>
     </section>
 
-    <section class="card-container">
-        <!-- Reemplazar las siguientes tarjetas duplicando y modificando href y datos por cada edición -->
-        <a class="card-link" href="Edicion_1_2025-05-03/documentos/revista_1.html">
-            <div class="card">
-                <span class="badge">Edición #1</span>
-                <img src="Edicion_1_2025-05-03/imagenes/Portada.png" alt="Portada Edición 1">
-                <div class="card-content">
-                    <h3>Edición 1 - 03 Mayo 2025</h3>
-                    <p>👉 Human-IA #1: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
+    <section id="revista">
+        <h2>Revista</h2>
+        <div class="card-container">
+            <a class="card-link" href="Edicion_1_2025-05-03/documentos/revista_1.html">
+                <div class="card">
+                    <span class="badge">Edición #1</span>
+                    <img src="Edicion_1_2025-05-03/imagenes/Portada.png" alt="Portada Edición 1">
+                    <div class="card-content">
+                        <h3>Edición 1 - 03 Mayo 2025</h3>
+                        <p>👉 Human-IA #1: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+            <!-- Puedes duplicar tarjetas aquí -->
+        </div>
+    </section>
 
-        <!-- Ejemplo de otra tarjeta: copiar y editar para cada nueva edición -->
-        <!--
-        <a class="card-link" href="Edicion_2_2025-05-16/documentos/revista_2.html">
-            <div class="card">
-                <span class="badge">Edición #2</span>
-                <img src="Edicion_2_2025-05-16/imagenes/Portada.png" alt="Portada Edición 2">
-                <div class="card-content">
-                    <h3>Edición 2 - 16 Mayo 2025</h3>
-                    <p>Descubre los nuevos avances de IA en salud mental, sostenibilidad, educación y más.</p>
-                </div>
-            </div>
-        </a>
-        -->
+    <section id="podcast">
+        <h2>Podcast</h2>
+        <p>🎧 Escucha nuestras reflexiones, entrevistas y debates sobre cada publicación de Human-IA.</p>
+        <!-- Aquí puedes insertar el reproductor o enlaces -->
+        <iframe src="https://open.spotify.com/embed-podcast/show/your-podcast-id" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- O solo un enlace si aún no tienes reproductor -->
+        <!-- <p><a href="https://open.spotify.com/show/your-podcast-id" target="_blank">Escuchar en Spotify</a></p> -->
     </section>
 
     <footer>
-        Revista 'Human-IA: Tu Revista Digital' generada automáticamente mediante IA bajo la supervisión de Ricardo Vásquez Silva y la empresa TransanalyticsData. Todos los derechos reservados.
+        <p>Revista 'Human-IA: Tu Revista Digital' generada automáticamente mediante IA bajo la supervisión de Ricardo Vásquez Silva y la empresa TransanalyticsData.</p>
+        <p>Contacto: <a href="mailto:ricardo@transanalyticsdata.com" style="color:white;">ricardo@transanalyticsdata.com</a> | Sitio web: <a href="https://www.transanalyticsdata.com/" style="color:white;">TransanalyticsData</a></p>
+        <p>&copy; 2025 Ricardo Vásquez Silva. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
-"""
+
 
 
