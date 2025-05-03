@@ -195,7 +195,9 @@ Cada página es una invitación a descubrir, cuestionar y co-crear. Porque la in
             flex-direction: column;
             align-items: center;
             padding: 20px;
-        ">
+            cursor: pointer;
+            position: relative;
+        " onclick="togglePlay('audio1')">
             <span class="badge" style="
                 background: #e63946;
                 color: white;
@@ -224,16 +226,30 @@ Cada página es una invitación a descubrir, cuestionar y co-crear. Porque la in
             
             <h3 style="color: #2a2a72; text-align: center; margin: 0;">Human-IA: Tu Podcast Digital – Capítulo 1</h3>
             <p style="font-size: 0.95em; color: #555; text-align: center;">Escucha nuestras reflexiones, entrevistas y debates sobre esta edición de Human-IA.</p>
-            <audio controls preload="none" style="width: 100%; margin-top: 10px;">
+            
+            <audio id="audio1" preload="none" style="width: 100%; margin-top: 10px;">
                 <source src="Edicion_1_2025-05-03/audios/podcast_capitulo1.mp3" type="audio/mpeg">
                 Tu navegador no soporta la reproducción de audio.
             </audio>
         </div>
-        
-        <!-- DUPLICA LA TARJETA PARA OTROS PODCASTS -->
-        <!-- <div class="card"> ... </div> -->
+
+        <!-- DUPLICA LA TARJETA CAMBIANDO EL id DEL AUDIO Y EL onclick -->
+        <!-- <div class="card" onclick="togglePlay('audio2')"> ... </div> -->
 
     </div>
+</section>
+
+<script>
+function togglePlay(audioId) {
+    const audio = document.getElementById(audioId);
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+</script>
+
 </section>
 
     <footer>
