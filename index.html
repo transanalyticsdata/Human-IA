@@ -3,352 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human-IA: Tu Revista Digital</title>
+    <title>Human-IA: Tu Revista Digital de Vanguardia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0A4E9A; /* Azul oscuro principal */
+            --secondary-color: #2A2A72; /* Azul más oscuro para navbar/footer */
+            --accent-color: #007BFF; /* Azul brillante para acentos */
+            --light-accent-color: #6FB1FC; /* Azul claro para degradados o bordes */
+            --background-color: #F8F9FA; /* Gris muy claro para el fondo */
+            --text-color: #212529; /* Negro suavizado para texto */
+            --card-background: #FFFFFF;
+            --card-shadow: rgba(0, 0, 0, 0.08);
+            --card-hover-shadow: rgba(0, 0, 0, 0.12);
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Merriweather', serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom right, #f0f0f0, #d7e6f4);
+            font-family: var(--font-body);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--text-color);
+            line-height: 1.7; /* Mejorado para legibilidad */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
         /* Navbar */
         .navbar {
-            background-color: #2a2a72;
+            background-color: var(--secondary-color);
             overflow: hidden;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex; /* Para alinear el logo y los enlaces */
+            align-items: center; /* Centrar verticalmente */
+            padding: 0 20px; /* Padding horizontal para la navbar */
         }
-        .navbar a {
+
+        .navbar .logo-container {
             float: left;
+            padding: 10px 0; /* Ajusta el padding según el tamaño de tu logo */
+        }
+
+        .navbar .logo-container img {
+            height: 40px; /* Ajusta la altura de tu logo */
+            width: auto;
+            display: block;
+        }
+        
+        .navbar .nav-links {
+            margin-left: auto; /* Empuja los enlaces a la derecha */
+        }
+
+        .navbar a {
+            float: left; /* Mantener para los enlaces de navegación */
             display: block;
             color: white;
             text-align: center;
-            padding: 16px 20px;
+            padding: 20px 22px; /* Aumentado el padding para mejor tacto */
             text-decoration: none;
             font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .navbar a:hover {
-            background-color: #4e4e9e;
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #4A55A2; /* Un azul intermedio para hover */
+            color: #E0EAFC;
         }
+
+        /* Header */
         header {
-            background-color: #2a2a72;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent-color) 100%);
             color: white;
-            padding: 60px 20px 40px;
+            padding: 100px 20px 60px; /* Aumentado el padding superior por la navbar fija */
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px; /* Altura de la navbar */
+            border-bottom: 5px solid var(--accent-color);
         }
+
         header h1 {
-            font-size: 2.8em;
-            margin: 0;
+            font-family: var(--font-heading);
+            font-size: 3.2em; /* Ligeramente más grande */
+            margin: 0 0 10px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
+
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-top: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
         }
+
+        /* Secciones Generales */
         section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
+            padding: 50px 20px; /* Aumentado padding vertical */
+            max-width: 1100px; /* Ligeramente más ancho para contenido */
+            margin: 20px auto;
         }
-        .intro p {
-            font-size: 1.1em;
-            line-height: 1.8em;
+
+        section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5em; /* Títulos de sección más grandes */
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px; /* Más espacio después del título */
+            position: relative;
+            padding-bottom: 15px;
+        }
+        /* Línea decorativa debajo de H2 */
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Sección Quiénes Somos */
+        #quienes-somos .intro {
+            font-size: 1.15em; /* Ligeramente más grande para mejor lectura */
+            line-height: 1.85;
             text-align: justify;
-            max-width: 850px;
-            margin: auto;
+            max-width: 800px; /* Ancho de párrafo controlado */
+            margin: 0 auto 30px auto; /* Centrado y con margen inferior */
+            color: #454545; /* Color de texto más suave */
         }
+        #quienes-somos .intro strong { /* Estilo para los puntos clave */
+            display: block;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        #quienes-somos .intro strong::before { /* Icono de check sutil */
+            content: "✓ ";
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+
+        /* Contenedor de Tarjetas (Revista y Podcast) */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustado minmax */
+            gap: 25px; /* Un poco más de espacio */
             margin-top: 30px;
         }
+
+        .card-link { /* Para que toda la tarjeta sea un enlace */
+            text-decoration: none;
+            color: inherit;
+            display: block; /* Necesario para que el enlace ocupe el espacio de la tarjeta */
+        }
+
         .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: var(--card-background);
+            border-radius: 12px; /* Bordes más redondeados */
+            box-shadow: 0 5px 15px var(--card-shadow);
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Para estructura interna flexible */
+            flex-direction: column; /* Apilar imagen y contenido */
+            height: 100%; /* Para que todas las tarjetas en una fila tengan la misma altura si es necesario */
         }
+
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transform: translateY(-8px); /* Efecto de elevación más pronunciado */
+            box-shadow: 0 10px 25px var(--card-hover-shadow);
         }
-        .card img {
+
+        .card .card-image-wrapper { /* Nuevo contenedor para la imagen */
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: 200px; /* Altura fija para la imagen */
+            overflow: hidden; /* Para asegurar que object-fit funcione bien */
+            position: relative; /* Para el badge */
         }
+
+        .card .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+            display: block; /* Quitar espacio extra debajo de la imagen */
+            transition: transform 0.3s ease;
+        }
+        .card:hover .card-image-wrapper img {
+            transform: scale(1.05); /* Sutil zoom en la imagen al pasar el cursor */
+        }
+
         .card-content {
-            padding: 20px;
+            padding: 20px 25px; /* Ajustado el padding */
+            flex-grow: 1; /* Para que el contenido llene el espacio si las tarjetas tienen alturas variables */
+            display: flex;
+            flex-direction: column;
         }
+
         .card-content h3 {
-            margin: 0 0 10px 0;
-            color: #2a2a72;
+            font-family: var(--font-heading);
+            margin: 0 0 12px 0;
+            color: var(--accent-color); /* Usar color de acento */
+            font-size: 1.4em; /* Ligeramente más grande */
         }
+
         .card-content p {
-            margin: 0;
-            font-size: 0.95em;
+            margin: 0 0 15px 0; /* Espacio debajo del párrafo */
+            font-size: 0.98em;
             color: #555;
+            line-height: 1.6;
+            flex-grow: 1; /* Empuja el botón (si lo hubiera) hacia abajo */
         }
-        footer {
-            background-color: #2a2a72;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9em;
-            margin-top: 50px;
-        }
+        
+        /* Badge de Edición */
         .badge {
-            background-color: #e63946;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
             color: white;
-            padding: 5px 10px;
+            padding: 6px 12px;
             font-size: 0.8em;
+            font-weight: 700;
             border-radius: 5px;
             position: absolute;
             top: 15px;
             right: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
+        /* Sección Podcast Específica */
+        #podcast .card {
+            cursor: default; /* Quitar cursor pointer si el onclick está en otro lado */
+        }
+        #podcast .podcast-image-overlay {
+            position: relative;
+            cursor: pointer; /* Hacer que la imagen sea clickeable */
+        }
+        #podcast .podcast-image-overlay img {
+             height: 250px; /* Altura específica para imágenes de podcast */
+        }
+
+        #podcast .play-icon-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); /* Overlay más sutil */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            opacity: 1; /* Siempre visible */
+        }
+        #podcast .card:hover .play-icon-overlay {
+            background: rgba(0,0,0,0.5); /* Más oscuro al pasar el cursor */
+        }
+
+        #podcast .play-icon-overlay span {
+            font-size: 60px; /* Icono más grande */
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        #podcast .card-content h3 {
+            margin-bottom: 8px;
+        }
+        #podcast audio {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 5px; /* Redondear el reproductor */
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #E0EAFC; /* Color de texto más claro para contraste */
+            text-align: center;
+            padding: 40px 20px; /* Más padding */
+            font-size: 0.95em;
+            margin-top: 60px;
+            line-height: 1.6;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        footer a {
+            color: #A7C7E7; /* Color de enlace más claro */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+        .footer-important-note {
+            font-weight: 500;
+            color: #FFD700; /* Amarillo para destacar la nota importante */
+            margin-top: 15px !important;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+            header p { font-size: 1.1em; }
+            section h2 { font-size: 2em; }
+            .navbar { padding: 0 10px; justify-content: space-between; } /* Ajustar navbar en móvil */
+            .navbar .logo-container { padding: 8px 0;}
+            .navbar .logo-container img { height: 35px; }
+            .navbar a { padding: 18px 12px; font-size: 0.95em;}
+            .card-container { grid-template-columns: 1fr; } /* Una columna en móviles */
+        }
+         @media (max-width: 480px) {
+            header h1 { font-size: 2.2em; }
+            header p { font-size: 1em; }
+            section h2 { font-size: 1.8em; }
+            .navbar a { padding: 16px 10px; font-size: 0.9em;}
+         }
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <a href="#quienes-somos">Quiénes Somos</a>
-        <a href="#revista">Revista</a>
-        <a href="#podcast">Podcast</a>
-        <a href="https://transanalyticsdata.github.io/Ricardo_Portafolio/" target="_blank">Ricardo Vásquez</a>
-    </div>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="#"><img src="logo.png" alt="Human-IA Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#revista">Revista</a>
+            <a href="#podcast">Podcast</a>
+            <a href="https://transanalyticsdata.github.io/Ricardo_Portafolio/" target="_blank" rel="noopener noreferrer">Ricardo Vásquez</a>
+        </div>
+    </nav>
 
     <header>
         <h1>Human-IA: Tu Revista Digital</h1>
-        <p>Explorando el impacto de la Inteligencia Artificial en la sociedad, la tecnología y la innovación.</p>
+        <p>Explorando la vanguardia de la Inteligencia Artificial: su impacto transformador en la sociedad, la tecnología y la innovación global.</p>
     </header>
 
-    <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
-        <p class="intro">
-              Human-IA: Tu Revista Digital nace como una invitación a repensar la relación entre la inteligencia artificial y la humanidad.  
-<br>
-Es mucho más que una publicación: es un puente entre la tecnología emergente y las preguntas esenciales sobre quiénes somos, qué creamos y hacia dónde vamos. Cada edición es un espacio curado para explorar, imaginar y cuestionar el papel de la IA en nuestra cultura, nuestra ética y nuestras aspiraciones colectivas. No buscamos solo informar, sino provocar conversaciones, abrir ventanas a posibilidades y acompañar a los lectores en el desafío de integrar la inteligencia artificial en sus vidas de manera consciente y crítica.  
-<br>
-En sus páginas encontrarás una diversidad de perspectivas y voces:  
-<br>
-✅ Una <strong>carta del editor</strong> que traza el hilo conductor de cada número, abriendo la reflexión sobre un tema central y su resonancia en nuestro tiempo.  
-<br>
-✅ <strong>Artículos temáticos</strong> que desmenuzan las aplicaciones de la IA en sectores como la salud, la educación, la industria, el arte y la vida cotidiana, acercando el conocimiento técnico a un lenguaje accesible y humano.  
-<br>
-✅ Una <strong>columna polémica</strong> que desafía al lector con dilemas éticos, preguntas incómodas y debates abiertos sobre los límites y responsabilidades de las tecnologías autónomas.  
-<br>
-✅ Un <strong>espacio de análisis de datos</strong> que muestra cómo la inteligencia artificial lee, interpreta y transforma la información, revelando patrones ocultos y nuevas formas de comprender el mundo.  
-<br>
-✅ Una <strong>sección práctica</strong> dedicada a herramientas accesibles, consejos y guías para que cualquier persona, experta o no, pueda empezar a explorar y utilizar la IA en su vida diaria.  
-<br>
-✅ Un <strong>laboratorio creativo</strong>, donde la inteligencia artificial se convierte en coautora de narrativas, poemas, cuentos y piezas artísticas que expanden nuestra imaginación y desdibujan los límites entre lo humano y lo artificial.  
-<br>
-✅ Y finalmente, una <strong>sección de Tips Human-IA</strong>, ubicada al cierre de la revista, que entrega recomendaciones aplicables y éticas para integrar la inteligencia artificial en la vida cotidiana, con ejemplos claros y prácticos.  
-<br>
-Human-IA no pretende sustituir la creatividad ni la mirada crítica del ser humano. Al contrario: la amplifica, la desafía, la inspira. Este proyecto es un testimonio vivo de cómo la tecnología puede ser aliada del pensamiento profundo, del arte, de la educación y del espíritu transformador de la sociedad.  
-<br>
-Cada página es una invitación a descubrir, cuestionar y co-crear. Porque la inteligencia artificial, más que una herramienta, es ya una conversación abierta entre algoritmos y humanidad.
-
-        </p>
-    </section>
-
-    <section id="revista">
-        <h2>Revista</h2>
-        <div class="card-container">
-            <a class="card-link" href="Edicion_1_2025-05-03/documentos/revista_1.html">
-                <div class="card">
-                    <span class="badge">Edición #1</span>
-                    <img src="Edicion_1_2025-05-03/imagenes/Portada.png" alt="Portada Edición 1">
-                    <div class="card-content">
-                        <h3>Edición 1 - 03 Mayo 2025</h3>
-                        <p>👉 Human-IA #1: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
-                    </div>
-                </div>
-            </a>
-            <a class="card-link" href="Edicion_2_2025-05-10/documentos/revista_2.html">
-                <div class="card">
-                    <span class="badge">Edición #2</span>
-                    <img src="Edicion_2_2025-05-10/imagenes/Portada.png" alt="Portada Edición 2">
-                    <div class="card-content">
-                        <h3>Edición 2 - 10 Mayo 2025</h3>
-                        <p>👉 Human-IA #2: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
-                    </div>
-                </div>
-            </a>
-            <a class="card-link" href="Edicion_3_2025-05-11/documentos/revista_3.html">
-                <div class="card">
-                    <span class="badge">Edición #3</span>
-                    <img src="Edicion_3_2025-05-11/imagenes/Portada.png" alt="Portada Edición 3">
-                    <div class="card-content">
-                        <h3>Edición 3 - 11 Mayo 2025</h3>
-                        <p>👉 Human-IA #3: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
-                    </div>
-                </div>
-            </a>
-            <a class="card-link" href="Edicion_4_2025-05-17/documentos/revista_4.html">
-                <div class="card">
-                    <span class="badge">Edición #4</span>
-                    <img src="Edicion_4_2025-05-17/imagenes/Portada.png" alt="Portada Edición 4">
-                    <div class="card-content">
-                        <h3>Edición 4 - 17 Mayo 2025</h3>
-                        <p>👉 Human-IA #4: Inteligencia artificial aplicada a los desafíos, oportunidades y dilemas del presente.</p>
-                    </div>
-                </div>
-            </a>
-           
-            <!-- Puedes duplicar tarjetas aquí -->
-        </div>
-    </section>
-
-<section id="podcast">
-    <h2>Podcast</h2>
-    <div class="card-container" style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    ">
-        <div class="card" style="
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-        " onclick="togglePlay('audio1')">
-        
-            <!-- Imagen y overlay -->
-            <div style="position: relative;">
-                <img src="Edicion_1_2025-05-03/audios/portada_capitulo1.png" alt="Carátula Podcast Capítulo 1" style="
-                    width: 100%;
-                    height: 250px;
-                    object-fit: cover;
-                    display: block;
-                ">
-                <div style="
-                    position: absolute;
-                    top: 0; left: 0;
-                    width: 100%; height: 100%;
-                    background: rgba(0,0,0,0.4);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: background 0.3s;
-                ">
-                    <span id="icon1" style="
-                        font-size: 50px;
-                        color: white;
-                    ">▶️</span>
-                </div>
-            </div>
-
-            <!-- Título y descripción -->
-            <div style="padding: 15px; text-align: center;">
-                <h3 style="color: #2a2a72; margin: 0;">Human-IA: Tu Podcast Digital – Capítulo 1</h3>
-                <p style="font-size: 0.95em; color: #555; margin: 10px 0;">Escucha nuestras reflexiones, entrevistas y debates sobre esta edición de Human-IA.</p>
+    <main>
+        <section id="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <div class="intro">
+                <p>
+                    Human-IA: Tu Revista Digital nace como una invitación a repensar la profunda y evolutiva relación entre la inteligencia artificial y la humanidad. Es mucho más que una publicación: es un puente dinámico entre la tecnología emergente y las preguntas esenciales sobre quiénes somos, qué creamos y hacia dónde nos dirigimos como civilización.
+                </p>
+                <p>
+                    Cada edición es un espacio cuidadosamente curado para explorar, imaginar y cuestionar el papel de la IA en nuestra cultura, nuestra ética y nuestras aspiraciones colectivas. No buscamos solo informar, sino provocar conversaciones significativas, abrir ventanas a posibilidades futuras y acompañar a nuestros lectores en el desafío de integrar la inteligencia artificial en sus vidas y profesiones de manera consciente, crítica y estratégica.
+                </p>
                 
-                <!-- Reproductor visible -->
-                <audio id="audio1" controls preload="none" style="width: 100%; margin-top: 10px;">
-                    <source src="Edicion_1_2025-05-03/audios/podcast_capitulo1.mp3" type="audio/mpeg">
-                    Tu navegador no soporta la reproducción de audio.
-                </audio>
-            </div>
-        </div>
-    </div>
-    <div class="card-container" style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    ">
-        <div class="card" style="
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-        " onclick="togglePlay('audio2')">
-        
-            <!-- Imagen y overlay -->
-            <div style="position: relative;">
-                <img src="Edicion_2_2025-05-10/audios/portada_capitulo2.png" alt="Carátula Podcast Capítulo 2" style="
-                    width: 100%;
-                    height: 250px;
-                    object-fit: cover;
-                    display: block;
-                ">
-                <div style="
-                    position: absolute;
-                    top: 0; left: 0;
-                    width: 100%; height: 100%;
-                    background: rgba(0,0,0,0.4);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: background 0.3s;
-                ">
-                    <span id="icon1" style="
-                        font-size: 50px;
-                        color: white;
-                    ">▶️</span>
-                </div>
-            </div>
-
-            <!-- Título y descripción -->
-            <div style="padding: 15px; text-align: center;">
-                <h3 style="color: #2a2a72; margin: 0;">Human-IA: Tu Podcast Digital – Capítulo 2</h3>
-                <p style="font-size: 0.95em; color: #555; margin: 10px 0;">Escucha nuestras reflexiones, entrevistas y debates sobre esta edición de Human-IA.</p>
+                <strong>Una Carta del Editor Profunda y Contextualizada:</strong>
+                <p>Cada número se abre con una reflexión que traza el hilo conductor de la edición, analizando un tema central y su resonancia en nuestro tiempo actual y futuro cercano.</p>
                 
-                <!-- Reproductor visible -->
-                <audio id="audio2" controls preload="none" style="width: 100%; margin-top: 10px;">
-                    <source src="Edicion_2_2025-05-10/audios/podcast_capitulo2.mp3" type="audio/mpeg">
-                    Tu navegador no soporta la reproducción de audio.
-                </audio>
+                <strong>Artículos Temáticos de Vanguardia:</strong>
+                <p>Desmenuzamos las aplicaciones de la IA en sectores clave como la salud, la educación, la industria, el arte y la vida cotidiana, acercando el conocimiento técnico a un lenguaje accesible y profundamente humano.</p>
+                
+                <strong>Columnas Polémicas que Incitan al Debate:</strong>
+                <p>Desafiamos al lector con dilemas éticos, preguntas incómodas y debates abiertos sobre los límites, sesgos y responsabilidades inherentes a las tecnologías autónomas.</p>
+                
+                <strong>Análisis de Datos Reveladores con "Data Viva":</strong>
+                <p>Mostramos cómo la inteligencia artificial lee, interpreta y transforma la información, revelando patrones ocultos y nuevas formas de comprender la complejidad del mundo.</p>
+                
+                <strong>"IA de Bolsillo": Aplicaciones Prácticas y Accesibles:</strong>
+                <p>Una sección dedicada a tipos de herramientas, conceptos y guías para que cualquier persona, experta o no, pueda empezar a explorar y utilizar la IA en su vida diaria o profesional.</p>
+                
+                <strong>"Laboratorio Human-IA": La Creatividad Algorítmica:</strong>
+                <p>Un espacio donde la inteligencia artificial se convierte en coautora de narrativas, poemas y piezas artísticas que expanden nuestra imaginación y exploran las fronteras entre lo humano y lo artificial.</p>
+                
+                <strong>"Tips Human-IA": Consejos para la Integración Cotidiana:</strong>
+                <p>Al cierre de cada revista, entregamos recomendaciones aplicables y éticas para integrar la IA en la vida diaria, con ejemplos claros y prácticos.</p>
+                
+                <p>
+                    Human-IA no pretende sustituir la creatividad ni la mirada crítica del ser humano. Al contrario: busca amplificarla, desafiarla e inspirarla. Este proyecto es un testimonio vivo de cómo la tecnología puede ser una poderosa aliada del pensamiento profundo, del arte, de la educación y del espíritu transformador de la sociedad. Cada página es una invitación a descubrir, cuestionar y co-crear, porque la inteligencia artificial, más que una herramienta, es ya una conversación abierta y fundamental entre algoritmos y humanidad.
+                </p>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<script>
-function togglePlay(audioId) {
-    const audio = document.getElementById(audioId);
-    const icon = document.getElementById('icon1');
-    
-    if (audio.paused) {
-        audio.play();
-        icon.textContent = "⏸️";
-    } else {
-        audio.pause();
-        icon.textContent = "▶️";
-    }
+        <section id="revista">
+            <h2>Ediciones de la Revista</h2>
+            <div class="card-container">
+                <a class="card-link" href="Edicion_4_2025-05-17/documentos/revista_4.html" title="Leer Edición 4 de Human-IA">
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <span class="badge">Edición #4</span>
+                            <img src="Edicion_4_2025-05-17/imagenes/Portada.png" alt="Portada Edición 4 Human-IA">
+                        </div>
+                        <div class="card-content">
+                            <h3>Edición 4 - Mayo 2025</h3>
+                            <p>Profundiza en el impacto de la IA en la Economía y los Negocios Globales, explorando desde la IA generativa hasta el Metaverso Industrial.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="card-link" href="Edicion_3_2025-05-11/documentos/revista_3.html" title="Leer Edición 3 de Human-IA">
+                    <div class="card">
+                         <div class="card-image-wrapper">
+                            <span class="badge">Edición #3</span>
+                            <img src="Edicion_3_2025-05-11/imagenes/Portada.png" alt="Portada Edición 3 Human-IA">
+                        </div>
+                        <div class="card-content">
+                            <h3>Edición 3 - Mayo 2025</h3>
+                            <p>Un análisis sobre la IA en la Medicina, el impacto psicológico en atletas y las últimas herramientas de IA para profesionales.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="card-link" href="Edicion_2_2025-05-10/documentos/revista_2.html" title="Leer Edición 2 de Human-IA">
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <span class="badge">Edición #2</span>
+                            <img src="Edicion_2_2025-05-10/imagenes/Portada.png" alt="Portada Edición 2 Human-IA">
+                        </div>
+                        <div class="card-content">
+                            <h3>Edición 2 - Mayo 2025</h3>
+                            <p>Exploramos la IA en el Deporte y Rendimiento Atlético, dilemas éticos y la creatividad algorítmica.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="card-link" href="Edicion_1_2025-05-03/documentos/revista_1.html" title="Leer Edición 1 de Human-IA">
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <span class="badge">Edición #1</span>
+                            <img src="Edicion_1_2025-05-03/imagenes/Portada.png" alt="Portada Edición 1 Human-IA">
+                        </div>
+                        <div class="card-content">
+                            <h3>Edición 1 - Mayo 2025</h3>
+                            <p>Nuestra edición inaugural: IA aplicada a desafíos, oportunidades y dilemas del presente en diversos sectores.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    // Actualizar ícono también al usar el control manual
-    audio.onplay = () => icon.textContent = "⏸️";
-    audio.onpause = () => icon.textContent = "▶️";
-}
-</script>
-
-
-</section>
+        <section id="podcast">
+            <h2>Podcast Human-IA</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="podcast-image-overlay" onclick="togglePlay('audio2', 'icon_audio2')">
+                        <img src="Edicion_2_2025-05-10/audios/portada_capitulo2.png" alt="Carátula Podcast Capítulo 2 Human-IA">
+                        <div class="play-icon-overlay">
+                            <span id="icon_audio2">▶️</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Capítulo 2: IA en el Deporte</h3>
+                        <p>Reflexiones y debates sobre la Inteligencia Artificial en el mundo del deporte y el rendimiento atlético, basados en nuestra Edición #2.</p>
+                        <audio id="audio2" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio2', 'icon_audio2')" onpause="updateIcon('audio2', 'icon_audio2')">
+                            <source src="Edicion_2_2025-05-10/audios/podcast_capitulo2.mp3" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="podcast-image-overlay" onclick="togglePlay('audio1', 'icon_audio1')">
+                        <img src="Edicion_1_2025-05-03/audios/portada_capitulo1.png" alt="Carátula Podcast Capítulo 1 Human-IA">
+                        <div class="play-icon-overlay">
+                            <span id="icon_audio1">▶️</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Capítulo 1: El Despertar de Human-IA</h3>
+                        <p>Sumérgete en nuestra primera edición con análisis, entrevistas y debates sobre los temas tratados en Human-IA #1.</p>
+                        <audio id="audio1" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio1', 'icon_audio1')" onpause="updateIcon('audio1', 'icon_audio1')">
+                            <source src="Edicion_1_2025-05-03/audios/podcast_capitulo1.mp3" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Revista 'Human-IA: Tu Revista Digital' generada automáticamente mediante IA bajo la supervisión de Ricardo Vásquez Silva y la empresa TransanalyticsData.</p>
-        <p>Contacto: <a href="mailto:visiondataconsulting@gmail.com" style="color:white;">visiondataconsulting@gmail.com</a> | Sitio web: <a href="https://www.transanalyticsdata.com/" style="color:white;">TransanalyticsData</a></p>
+        <p>Revista 'Human-IA: Tu Revista Digital' generada con asistencia de IA bajo la dirección editorial de Ricardo Vásquez Silva (TransanalyticsData).</p>
+        <p class="footer-important-note"><strong>Importante:</strong> Todo el contenido generado por IA, especialmente nombres propios, afirmaciones fácticas y datos específicos, debe ser verificado y contrastado por un humano antes de su publicación.</p>
+        <p>Contacto: <a href="mailto:visiondataconsulting@gmail.com">visiondataconsulting@gmail.com</a> | Sitio web: <a href="https://www.transanalyticsdata.com/" target="_blank" rel="noopener noreferrer">TransanalyticsData</a></p>
         <p>&copy; 2025 Ricardo Vásquez Silva. Todos los derechos reservados.</p>
     </footer>
 
+<script>
+    // Script para la Navbar activa y scroll suave (opcional)
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".navbar .nav-links a");
+
+        function changeNav() {
+            let index = sections.length;
+            while(--index && window.scrollY + 100 < sections[index].offsetTop) {} // 100 es un offset
+            
+            navLinks.forEach((link) => link.classList.remove("active"));
+            if (index >= 0 && navLinks[index]) { // Asegurarse de que el índice sea válido
+                 navLinks[index].classList.add("active");
+            }
+        }
+        changeNav(); // Llamar al cargar
+        window.addEventListener("scroll", changeNav); // Llamar al hacer scroll
+
+        // Scroll suave para anclas
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const hrefAttribute = this.getAttribute('href');
+                if (hrefAttribute.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(hrefAttribute).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Actualizar clase activa inmediatamente después del clic
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Script para el reproductor de Podcast
+    function togglePlay(audioId, iconId) {
+        const audio = document.getElementById(audioId);
+        const icon = document.getElementById(iconId); // Usar el iconId específico
+        
+        if (audio.paused) {
+            // Pausar otros audios si se están reproduciendo
+            document.querySelectorAll('audio').forEach(otherAudio => {
+                if (otherAudio.id !== audioId && !otherAudio.paused) {
+                    otherAudio.pause();
+                    // Actualizar el ícono del otro audio si es necesario
+                    const otherIconId = otherAudio.id.replace("audio", "icon_audio");
+                    const otherIcon = document.getElementById(otherIconId);
+                    if (otherIcon) otherIcon.textContent = "▶️";
+                }
+            });
+            audio.play();
+            // icon.textContent = "⏸️"; // Se actualiza con el evento onplay
+        } else {
+            audio.pause();
+            // icon.textContent = "▶️"; // Se actualiza con el evento onpause
+        }
+    }
+
+    function updateIcon(audioId, iconId) {
+        const audio = document.getElementById(audioId);
+        const icon = document.getElementById(iconId);
+        if (audio.paused) {
+            icon.textContent = "▶️";
+        } else {
+            icon.textContent = "⏸️";
+        }
+    }
+</script>
+
 </body>
 </html>
+```
 
+**Explicación de Cambios Clave en el HTML/CSS:**
 
+* **Variables CSS (`:root`):** Para facilitar la gestión de colores y fuentes, he definido variables CSS.
+* **Fuentes:** Se cargan `Inter` y `Merriweather` desde Google Fonts.
+* **Navbar:**
+    * Ahora usa Flexbox para alinear el logo a la izquierda y los enlaces de navegación a la derecha.
+    * El placeholder del logo es `<img>` dentro de `<div class="logo-container">`. Deberás poner la ruta correcta a tu `logo.png`.
+    * Se ha añadido un script simple para marcar el enlace activo en la navbar según la sección visible y para el scroll suave.
+* **Header:** Se ha hecho más espacioso y con un degradado más moderno.
+* **Sección "Quiénes Somos":** El texto se ha formateado un poco diferente, usando párrafos y `<strong>` para los puntos clave, con un pequeño icono de "check" añadido mediante CSS.
+* **Tarjetas de Edición y Podcast:**
+    * Diseño más limpio, sombras suaves, bordes redondeados.
+    * El título de la edición usa el color de acento.
+    * Las imágenes tienen una altura fija y `object-fit: cover;` para mantener la proporción y llenar el espacio.
+    * Se ha añadido un sutil efecto de zoom en la imagen de la tarjeta al pasar el cursor.
+    * Toda la tarjeta de edición es un enlace.
+* **Podcast Player:**
+    * El JavaScript para `togglePlay` se ha corregido para que funcione con múltiples audios e iconos. Ahora necesitas pasar el `iconId` también.
+    * Se han añadido eventos `onplay` y `onpause` directamente en las etiquetas `<audio>` para llamar a una nueva función `updateIcon` que asegura que el icono play/pausa se actualice correctamente incluso si el usuario interactúa directamente con los controles del reproductor.
+* **Footer:** Se ha añadido el recordatorio importante sobre la verificación del contenido de IA.
+* **Responsividad:** Se han mantenido y ajustado ligeramente las media queries.
 
+**Instrucciones para ti:**
+
+1.  **Guarda este código** como tu nuevo `index.html`.
+2.  **Diseña tu logo:** Crea tu archivo `logo.png` (o el formato que elijas).
+3.  **Actualiza la ruta del logo:** En la sección de la navbar, cambia `src="logo.png"` a la ruta correcta donde hayas guardado tu logo (ej. `src="assets/logo.png"` si lo pones en una carpeta `assets`).
+4.  **Verifica las rutas a las ediciones:** Asegúrate de que las rutas como `href="Edicion_4_2025-05-17/documentos/revista_4.html"` y las rutas a las imágenes de portada de las ediciones y podcasts sean correctas según tu estructura de carpetas en GitHub. La imagen que me enviaste sugiere que estas rutas deberían funcionar si `index.html` está en la raíz del repositorio `Human-IA`.
+5.  **Prueba exhaustivamente:** Abre el `index.html` en tu navegador y prueba todos los enlaces, la responsividad en diferentes tamaños de pantalla y la funcionalidad del reproductor de podcast.
+
+Espero que esta versión mejorada se acerque mucho más a la visión que tienes para Human-IA. ¡Avísame si tienes más preguntas o necesitas ajust
