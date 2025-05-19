@@ -28,7 +28,7 @@
             margin: 0;
             padding: 0;
             color: var(--text-color);
-            line-height: 1.7; /* Mejorado para legibilidad */
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -42,32 +42,32 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex; /* Para alinear el logo y los enlaces */
-            align-items: center; /* Centrar verticalmente */
-            padding: 0 20px; /* Padding horizontal para la navbar */
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
         }
 
         .navbar .logo-container {
             float: left;
-            padding: 10px 0; /* Ajusta el padding según el tamaño de tu logo */
+            padding: 10px 0;
         }
 
         .navbar .logo-container img {
-            height: 40px; /* Ajusta la altura de tu logo */
+            height: 40px;
             width: auto;
             display: block;
         }
         
         .navbar .nav-links {
-            margin-left: auto; /* Empuja los enlaces a la derecha */
+            margin-left: auto;
         }
 
         .navbar a {
-            float: left; /* Mantener para los enlaces de navegación */
+            float: left;
             display: block;
             color: white;
             text-align: center;
-            padding: 20px 22px; /* Aumentado el padding para mejor tacto */
+            padding: 20px 22px;
             text-decoration: none;
             font-size: 1em;
             font-weight: 500;
@@ -75,7 +75,7 @@
         }
 
         .navbar a:hover, .navbar a.active {
-            background-color: #4A55A2; /* Un azul intermedio para hover */
+            background-color: #4A55A2;
             color: #E0EAFC;
         }
 
@@ -83,7 +83,7 @@
         header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent-color) 100%);
             color: white;
-            padding: 100px 20px 60px; /* Aumentado el padding superior por la navbar fija */
+            padding: 100px 20px 60px;
             text-align: center;
             margin-top: 60px; /* Altura de la navbar */
             border-bottom: 5px solid var(--accent-color);
@@ -91,7 +91,7 @@
 
         header h1 {
             font-family: var(--font-heading);
-            font-size: 3.2em; /* Ligeramente más grande */
+            font-size: 3.2em;
             margin: 0 0 10px 0;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
@@ -107,21 +107,20 @@
 
         /* Secciones Generales */
         section {
-            padding: 50px 20px; /* Aumentado padding vertical */
-            max-width: 1100px; /* Ligeramente más ancho para contenido */
+            padding: 50px 20px;
+            max-width: 1100px;
             margin: 20px auto;
         }
 
         section h2 {
             font-family: var(--font-heading);
-            font-size: 2.5em; /* Títulos de sección más grandes */
+            font-size: 2.5em;
             color: var(--primary-color);
             text-align: center;
-            margin-bottom: 40px; /* Más espacio después del título */
+            margin-bottom: 40px;
             position: relative;
             padding-bottom: 15px;
         }
-        /* Línea decorativa debajo de H2 */
         section h2::after {
             content: '';
             display: block;
@@ -134,14 +133,14 @@
 
         /* Sección Quiénes Somos */
         #quienes-somos .intro {
-            font-size: 1.15em; /* Ligeramente más grande para mejor lectura */
+            font-size: 1.15em;
             line-height: 1.85;
             text-align: justify;
-            max-width: 800px; /* Ancho de párrafo controlado */
-            margin: 0 auto 30px auto; /* Centrado y con margen inferior */
-            color: #454545; /* Color de texto más suave */
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            color: #454545;
         }
-        #quienes-somos .intro strong { /* Estilo para los puntos clave */
+        #quienes-somos .intro strong {
             display: block;
             font-family: var(--font-heading);
             color: var(--primary-color);
@@ -150,64 +149,63 @@
             margin-bottom: 8px;
             font-weight: 700;
         }
-        #quienes-somos .intro strong::before { /* Icono de check sutil */
+        #quienes-somos .intro strong::before {
             content: "✓ ";
             color: var(--accent-color);
             margin-right: 8px;
         }
 
-
         /* Contenedor de Tarjetas (Revista y Podcast) */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustado minmax */
-            gap: 25px; /* Un poco más de espacio */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
 
-        .card-link { /* Para que toda la tarjeta sea un enlace */
+        .card-link {
             text-decoration: none;
             color: inherit;
-            display: block; /* Necesario para que el enlace ocupe el espacio de la tarjeta */
+            display: block;
         }
 
         .card {
             background: var(--card-background);
-            border-radius: 12px; /* Bordes más redondeados */
+            border-radius: 12px;
             box-shadow: 0 5px 15px var(--card-shadow);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; /* Para estructura interna flexible */
-            flex-direction: column; /* Apilar imagen y contenido */
-            height: 100%; /* Para que todas las tarjetas en una fila tengan la misma altura si es necesario */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .card:hover {
-            transform: translateY(-8px); /* Efecto de elevación más pronunciado */
+            transform: translateY(-8px);
             box-shadow: 0 10px 25px var(--card-hover-shadow);
         }
 
-        .card .card-image-wrapper { /* Nuevo contenedor para la imagen */
+        .card .card-image-wrapper {
             width: 100%;
-            height: 200px; /* Altura fija para la imagen */
-            overflow: hidden; /* Para asegurar que object-fit funcione bien */
-            position: relative; /* Para el badge */
+            height: 200px;
+            overflow: hidden;
+            position: relative;
         }
 
         .card .card-image-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-            display: block; /* Quitar espacio extra debajo de la imagen */
+            object-fit: cover;
+            display: block;
             transition: transform 0.3s ease;
         }
         .card:hover .card-image-wrapper img {
-            transform: scale(1.05); /* Sutil zoom en la imagen al pasar el cursor */
+            transform: scale(1.05);
         }
 
         .card-content {
-            padding: 20px 25px; /* Ajustado el padding */
-            flex-grow: 1; /* Para que el contenido llene el espacio si las tarjetas tienen alturas variables */
+            padding: 20px 25px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
@@ -215,19 +213,18 @@
         .card-content h3 {
             font-family: var(--font-heading);
             margin: 0 0 12px 0;
-            color: var(--accent-color); /* Usar color de acento */
-            font-size: 1.4em; /* Ligeramente más grande */
+            color: var(--accent-color);
+            font-size: 1.4em;
         }
 
         .card-content p {
-            margin: 0 0 15px 0; /* Espacio debajo del párrafo */
+            margin: 0 0 15px 0;
             font-size: 0.98em;
             color: #555;
             line-height: 1.6;
-            flex-grow: 1; /* Empuja el botón (si lo hubiera) hacia abajo */
+            flex-grow: 1;
         }
         
-        /* Badge de Edición */
         .badge {
             background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
             color: white;
@@ -244,33 +241,33 @@
 
         /* Sección Podcast Específica */
         #podcast .card {
-            cursor: default; /* Quitar cursor pointer si el onclick está en otro lado */
+            cursor: default;
         }
         #podcast .podcast-image-overlay {
             position: relative;
-            cursor: pointer; /* Hacer que la imagen sea clickeable */
+            cursor: pointer;
         }
         #podcast .podcast-image-overlay img {
-             height: 250px; /* Altura específica para imágenes de podcast */
+             height: 250px;
         }
 
         #podcast .play-icon-overlay {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3); /* Overlay más sutil */
+            background: rgba(0,0,0,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background 0.3s ease;
-            opacity: 1; /* Siempre visible */
+            opacity: 1;
         }
         #podcast .card:hover .play-icon-overlay {
-            background: rgba(0,0,0,0.5); /* Más oscuro al pasar el cursor */
+            background: rgba(0,0,0,0.5);
         }
 
         #podcast .play-icon-overlay span {
-            font-size: 60px; /* Icono más grande */
+            font-size: 60px;
             color: white;
             text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
@@ -280,16 +277,141 @@
         #podcast audio {
             width: 100%;
             margin-top: 15px;
-            border-radius: 5px; /* Redondear el reproductor */
+            border-radius: 5px;
+        }
+
+        /* Sección de Comentarios */
+        #comentarios {
+            background-color: var(--card-background);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+            margin-top: 40px;
+        }
+
+        #comentarios h2 {
+            margin-bottom: 30px; /* Más espacio para el título de esta sección */
+        }
+
+        .comment-form-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fdfdfd; /* Ligeramente diferente al fondo de la sección */
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .comment-form-container h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .comment-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            width: calc(100% - 22px); /* Ajustar por padding y borde */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        .comment-form input[type="text"]:focus,
+        .comment-form textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+
+        .comment-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .comment-form button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .comments-list-container h3 {
+             font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+        
+        .comments-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comments-list li {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e7e7e7;
+            border-left: 4px solid var(--light-accent-color);
+            border-radius: 6px;
+        }
+
+        .comments-list .comment-author {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 1.05em;
+        }
+        .comments-list .comment-date {
+            font-size: 0.8em;
+            color: #777;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .comments-list .comment-text {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #333;
+            word-wrap: break-word; /* Para que los comentarios largos no rompan el layout */
+        }
+        .no-comments {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+            font-style: italic;
         }
 
 
         /* Footer */
         footer {
             background-color: var(--secondary-color);
-            color: #E0EAFC; /* Color de texto más claro para contraste */
+            color: #E0EAFC;
             text-align: center;
-            padding: 40px 20px; /* Más padding */
+            padding: 40px 20px;
             font-size: 0.95em;
             margin-top: 60px;
             line-height: 1.6;
@@ -298,7 +420,7 @@
             margin: 10px 0;
         }
         footer a {
-            color: #A7C7E7; /* Color de enlace más claro */
+            color: #A7C7E7;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -308,7 +430,7 @@
         }
         .footer-important-note {
             font-weight: 500;
-            color: #FFD700; /* Amarillo para destacar la nota importante */
+            color: #FFD700;
             margin-top: 15px !important;
         }
 
@@ -317,11 +439,14 @@
             header h1 { font-size: 2.5em; }
             header p { font-size: 1.1em; }
             section h2 { font-size: 2em; }
-            .navbar { padding: 0 10px; justify-content: space-between; } /* Ajustar navbar en móvil */
+            .navbar { padding: 0 10px; justify-content: space-between; }
             .navbar .logo-container { padding: 8px 0;}
             .navbar .logo-container img { height: 35px; }
             .navbar a { padding: 18px 12px; font-size: 0.95em;}
-            .card-container { grid-template-columns: 1fr; } /* Una columna en móviles */
+            .card-container { grid-template-columns: 1fr; }
+            #comentarios { padding: 20px; }
+            .comment-form input[type="text"],
+            .comment-form textarea { width: calc(100% - 22px); } /* Ajustar ancho en móvil */
         }
          @media (max-width: 480px) {
             header h1 { font-size: 2.2em; }
@@ -342,7 +467,7 @@
             <a href="#quienes-somos">Quiénes Somos</a>
             <a href="#revista">Revista</a>
             <a href="#podcast">Podcast</a>
-            <a href="https://transanalyticsdata.github.io/Ricardo_Portafolio/" target="_blank" rel="noopener noreferrer">Ricardo Vásquez</a>
+            <a href="#comentarios">Comentarios</a> <a href="https://transanalyticsdata.github.io/Ricardo_Portafolio/" target="_blank" rel="noopener noreferrer">Ricardo Vásquez</a>
         </div>
     </nav>
 
@@ -446,7 +571,7 @@
         <section id="podcast">
             <h2>Podcast Human-IA</h2>
             <div class="card-container">
-                <div class="card">
+                 <div class="card">
                     <div class="podcast-image-overlay" onclick="togglePlay('audio2', 'icon_audio2')">
                         <img src="Edicion_2_2025-05-10/audios/portada_capitulo2.png" alt="Carátula Podcast Capítulo 2 Human-IA">
                         <div class="play-icon-overlay">
@@ -478,9 +603,34 @@
                         </audio>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
-    </main>
+
+        <section id="comentarios">
+            <h2>Comentarios de los Lectores</h2>
+            <div class="comment-form-container">
+                <h3>Deja tu Comentario</h3>
+                <form id="commentForm" class="comment-form">
+                    <div>
+                        <label for="commentName">Nombre:</label>
+                        <input type="text" id="commentName" name="commentName" required>
+                    </div>
+                    <div>
+                        <label for="commentText">Comentario:</label>
+                        <textarea id="commentText" name="commentText" required></textarea>
+                    </div>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+            </div>
+
+            <div class="comments-list-container">
+                <h3>Comentarios Recientes</h3>
+                <ul id="commentsList" class="comments-list">
+                    <p class="no-comments" id="noCommentsMessage">Aún no hay comentarios. ¡Sé el primero en dejar uno!</p>
+                </ul>
+            </div>
+        </section>
+        </main>
 
     <footer>
         <p>Revista 'Human-IA: Tu Revista Digital' generada con asistencia de IA bajo la dirección editorial de Ricardo Vásquez Silva (TransanalyticsData).</p>
@@ -490,67 +640,164 @@
     </footer>
 
 <script>
-    // Script para la Navbar activa y scroll suave (opcional)
+    // Script para la Navbar activa y scroll suave
     document.addEventListener("DOMContentLoaded", function() {
-        const sections = document.querySelectorAll("section[id]");
+        const sections = document.querySelectorAll("main section[id]"); // Seleccionar solo secciones dentro de main
         const navLinks = document.querySelectorAll(".navbar .nav-links a");
 
         function changeNav() {
             let index = sections.length;
-            while(--index && window.scrollY + 100 < sections[index].offsetTop) {} // 100 es un offset
+            // Iterar hacia atrás para encontrar la sección visible más alta
+            while(--index >= 0 && window.scrollY + 100 < sections[index].offsetTop) {} 
             
             navLinks.forEach((link) => link.classList.remove("active"));
-            if (index >= 0 && navLinks[index]) { // Asegurarse de que el índice sea válido
-                 navLinks[index].classList.add("active");
+            // Encontrar el enlace correspondiente al ID de la sección
+            if (index >= 0) {
+                const activeSectionId = sections[index].id;
+                const activeLink = document.querySelector(`.navbar .nav-links a[href="#${activeSectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+            } else if (window.scrollY < sections[0].offsetTop - 100) { // Si estamos por encima de la primera sección
+                 // No marcar ninguno o marcar "Quiénes Somos" por defecto si es el inicio
+                 const homeLink = document.querySelector('.navbar .nav-links a[href="#quienes-somos"]');
+                 if (homeLink) homeLink.classList.add('active');
             }
         }
-        changeNav(); // Llamar al cargar
-        window.addEventListener("scroll", changeNav); // Llamar al hacer scroll
+        
+        if (sections.length > 0) { // Solo ejecutar si hay secciones
+            changeNav();
+            window.addEventListener("scroll", changeNav);
+        }
 
-        // Scroll suave para anclas
+
         navLinks.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const hrefAttribute = this.getAttribute('href');
-                if (hrefAttribute.startsWith('#')) {
+                if (hrefAttribute && hrefAttribute.startsWith('#')) {
                     e.preventDefault();
-                    document.querySelector(hrefAttribute).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Actualizar clase activa inmediatamente después del clic
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
+                    const targetElement = document.querySelector(hrefAttribute);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Actualizar clase activa inmediatamente después del clic
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
                 }
             });
         });
+
+        // --- Lógica para Comentarios ---
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        const noCommentsMessage = document.getElementById('noCommentsMessage');
+        const COMMENTS_STORAGE_KEY = 'humanIA_comments';
+
+        function loadComments() {
+            const storedComments = JSON.parse(localStorage.getItem(COMMENTS_STORAGE_KEY) || '[]');
+            commentsList.innerHTML = ''; // Limpiar lista existente (excepto el mensaje de no comentarios)
+            
+            if (storedComments.length === 0) {
+                if(noCommentsMessage) noCommentsMessage.style.display = 'block';
+            } else {
+                if(noCommentsMessage) noCommentsMessage.style.display = 'none';
+                storedComments.forEach(comment => {
+                    addCommentToDOM(comment);
+                });
+            }
+        }
+
+        function addCommentToDOM(comment) {
+            const listItem = document.createElement('li');
+            
+            const authorP = document.createElement('p');
+            authorP.className = 'comment-author';
+            authorP.textContent = comment.name;
+            
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'comment-date';
+            dateSpan.textContent = new Date(comment.date).toLocaleString('es-ES', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            
+            const textP = document.createElement('p');
+            textP.className = 'comment-text';
+            textP.textContent = comment.text;
+            
+            listItem.appendChild(authorP);
+            listItem.appendChild(dateSpan);
+            listItem.appendChild(textP);
+            
+            commentsList.appendChild(listItem);
+        }
+
+        function saveComment(name, text) {
+            const storedComments = JSON.parse(localStorage.getItem(COMMENTS_STORAGE_KEY) || '[]');
+            const newComment = {
+                name: name,
+                text: text,
+                date: new Date().toISOString() // Guardar fecha en formato ISO
+            };
+            storedComments.push(newComment);
+            localStorage.setItem(COMMENTS_STORAGE_KEY, JSON.stringify(storedComments));
+            
+            if(noCommentsMessage) noCommentsMessage.style.display = 'none'; // Ocultar mensaje si es el primer comentario
+            addCommentToDOM(newComment); // Añadir a la vista inmediatamente
+        }
+
+        if (commentForm) {
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nameInput = document.getElementById('commentName');
+                const textInput = document.getElementById('commentText');
+                
+                const name = nameInput.value.trim();
+                const text = textInput.value.trim();
+                
+                if (name && text) {
+                    saveComment(name, text);
+                    nameInput.value = ''; // Limpiar campo
+                    textInput.value = ''; // Limpiar campo
+                } else {
+                    alert('Por favor, ingresa tu nombre y un comentario.');
+                }
+            });
+        }
+        // Cargar comentarios al iniciar la página
+        loadComments();
     });
 
     // Script para el reproductor de Podcast
     function togglePlay(audioId, iconId) {
         const audio = document.getElementById(audioId);
-        const icon = document.getElementById(iconId); // Usar el iconId específico
+        const icon = document.getElementById(iconId);
+        
+        if (!audio || !icon) {
+            console.error("Audio o Icono no encontrado:", audioId, iconId);
+            return;
+        }
         
         if (audio.paused) {
-            // Pausar otros audios si se están reproduciendo
             document.querySelectorAll('audio').forEach(otherAudio => {
                 if (otherAudio.id !== audioId && !otherAudio.paused) {
                     otherAudio.pause();
-                    // Actualizar el ícono del otro audio si es necesario
                     const otherIconId = otherAudio.id.replace("audio", "icon_audio");
                     const otherIcon = document.getElementById(otherIconId);
                     if (otherIcon) otherIcon.textContent = "▶️";
                 }
             });
             audio.play();
-            // icon.textContent = "⏸️"; // Se actualiza con el evento onplay
         } else {
             audio.pause();
-            // icon.textContent = "▶️"; // Se actualiza con el evento onpause
         }
     }
 
     function updateIcon(audioId, iconId) {
         const audio = document.getElementById(audioId);
         const icon = document.getElementById(iconId);
+
+        if (!audio || !icon) return;
+
         if (audio.paused) {
             icon.textContent = "▶️";
         } else {
@@ -561,6 +808,5 @@
 
 </body>
 </html>
-
-
+```
 
