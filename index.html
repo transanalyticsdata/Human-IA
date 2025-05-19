@@ -571,6 +571,22 @@
         <section id="podcast">
             <h2>Podcast Human-IA</h2>
             <div class="card-container">
+                <div class="card">
+                    <div class="podcast-image-overlay" onclick="togglePlay('audio3', 'icon_audio3')">
+                        <img src="Edicion_3_2025-05-11/audios/portada_capitulo3.png" alt="Carátula Podcast Capítulo 3 Human-IA">
+                        <div class="play-icon-overlay">
+                            <span id="icon_audio3">▶️</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Capítulo 3: Inteligencia artificial en la educacion</h3>
+                        <p>En esta ocasión, nos sumergimos en el mundo de las Tecnologías en medicina: Lo último en IA, sistemas y soluciones como tambien su aplicación, basados en nuestra Edición #3.</p>
+                        <audio id="audio3" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio3', 'icon_audio3')" onpause="updateIcon('audio3', 'icon_audio3')">
+                            <source src="Edicion_3_2025-05-11/audios/podcast_capitulo3.mp3" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </div>
+                </div>
                  <div class="card">
                     <div class="podcast-image-overlay" onclick="togglePlay('audio2', 'icon_audio2')">
                         <img src="Edicion_2_2025-05-10/audios/portada_capitulo2.png" alt="Carátula Podcast Capítulo 2 Human-IA">
