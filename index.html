@@ -400,7 +400,7 @@
                         </div>
                         <div class="card-content">
                             <h3>Edición 4 - Mayo 2025</h3>
-                            <p>Profundiza en el impacto de la IA en la Economía y los Negocios Globales, explorando desde la IA generativa hasta el Metaverso Industrial.</p>
+                            <p>En esta ocasión, exploramos un territorio en plena expansión: el Metaverso Deportivo, un espacio donde la realidad virtual y la IA están redefiniendo los límites del entrenamiento y el rendimiento atlético.</p>
                         </div>
                     </div>
                 </a>
@@ -412,7 +412,7 @@
                         </div>
                         <div class="card-content">
                             <h3>Edición 3 - Mayo 2025</h3>
-                            <p>Un análisis sobre la IA en la Medicina, el impacto psicológico en atletas y las últimas herramientas de IA para profesionales.</p>
+                            <p>En esta ocasión, nos sumergimos en el mundo de las Tecnologías Emergentes en 2023: Lo último en IA, realidad aumentada y computación cuántica y su aplicación revolucionaria en el campo de la Medicina</p>
                         </div>
                     </div>
                 </a>
@@ -424,7 +424,7 @@
                         </div>
                         <div class="card-content">
                             <h3>Edición 2 - Mayo 2025</h3>
-                            <p>Exploramos la IA en el Deporte y Rendimiento Atlético, dilemas éticos y la creatividad algorítmica.</p>
+                            <p>Abordamos un tema tan pertinente como revolucionario: "Impacto de la inteligencia artificial en la educación a distancia: Herramientas y plataformas que están transformando el aprendizaje en línea"</p>
                         </div>
                     </div>
                 </a>
@@ -455,7 +455,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Capítulo 2: IA en el Deporte</h3>
-                        <p>Reflexiones y debates sobre la Inteligencia Artificial en el mundo del deporte y el rendimiento atlético, basados en nuestra Edición #2.</p>
+                        <p>Abordamos un tema tan pertinente como revolucionario: "Impacto de la inteligencia artificial en la educación a distancia: Herramientas y plataformas que están transformando el aprendizaje en línea, basados en nuestra Edición #2.</p>
                         <audio id="audio2" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio2', 'icon_audio2')" onpause="updateIcon('audio2', 'icon_audio2')">
                             <source src="Edicion_2_2025-05-10/audios/podcast_capitulo2.mp3" type="audio/mpeg">
                             Tu navegador no soporta la reproducción de audio.
@@ -471,7 +471,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Capítulo 1: El Despertar de Human-IA</h3>
-                        <p>Sumérgete en nuestra primera edición con análisis, entrevistas y debates sobre los temas tratados en Human-IA #1.</p>
+                        <p>Sumérgete en nuestra primera edición con análisis, conversacion y debates sobre los temas tratados en Human-IA #1.</p>
                         <audio id="audio1" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio1', 'icon_audio1')" onpause="updateIcon('audio1', 'icon_audio1')">
                             <source src="Edicion_1_2025-05-03/audios/podcast_capitulo1.mp3" type="audio/mpeg">
                             Tu navegador no soporta la reproducción de audio.
@@ -561,36 +561,6 @@
 
 </body>
 </html>
-```
 
-**Explicación de Cambios Clave en el HTML/CSS:**
 
-* **Variables CSS (`:root`):** Para facilitar la gestión de colores y fuentes, he definido variables CSS.
-* **Fuentes:** Se cargan `Inter` y `Merriweather` desde Google Fonts.
-* **Navbar:**
-    * Ahora usa Flexbox para alinear el logo a la izquierda y los enlaces de navegación a la derecha.
-    * El placeholder del logo es `<img>` dentro de `<div class="logo-container">`. Deberás poner la ruta correcta a tu `logo.png`.
-    * Se ha añadido un script simple para marcar el enlace activo en la navbar según la sección visible y para el scroll suave.
-* **Header:** Se ha hecho más espacioso y con un degradado más moderno.
-* **Sección "Quiénes Somos":** El texto se ha formateado un poco diferente, usando párrafos y `<strong>` para los puntos clave, con un pequeño icono de "check" añadido mediante CSS.
-* **Tarjetas de Edición y Podcast:**
-    * Diseño más limpio, sombras suaves, bordes redondeados.
-    * El título de la edición usa el color de acento.
-    * Las imágenes tienen una altura fija y `object-fit: cover;` para mantener la proporción y llenar el espacio.
-    * Se ha añadido un sutil efecto de zoom en la imagen de la tarjeta al pasar el cursor.
-    * Toda la tarjeta de edición es un enlace.
-* **Podcast Player:**
-    * El JavaScript para `togglePlay` se ha corregido para que funcione con múltiples audios e iconos. Ahora necesitas pasar el `iconId` también.
-    * Se han añadido eventos `onplay` y `onpause` directamente en las etiquetas `<audio>` para llamar a una nueva función `updateIcon` que asegura que el icono play/pausa se actualice correctamente incluso si el usuario interactúa directamente con los controles del reproductor.
-* **Footer:** Se ha añadido el recordatorio importante sobre la verificación del contenido de IA.
-* **Responsividad:** Se han mantenido y ajustado ligeramente las media queries.
 
-**Instrucciones para ti:**
-
-1.  **Guarda este código** como tu nuevo `index.html`.
-2.  **Diseña tu logo:** Crea tu archivo `logo.png` (o el formato que elijas).
-3.  **Actualiza la ruta del logo:** En la sección de la navbar, cambia `src="logo.png"` a la ruta correcta donde hayas guardado tu logo (ej. `src="assets/logo.png"` si lo pones en una carpeta `assets`).
-4.  **Verifica las rutas a las ediciones:** Asegúrate de que las rutas como `href="Edicion_4_2025-05-17/documentos/revista_4.html"` y las rutas a las imágenes de portada de las ediciones y podcasts sean correctas según tu estructura de carpetas en GitHub. La imagen que me enviaste sugiere que estas rutas deberían funcionar si `index.html` está en la raíz del repositorio `Human-IA`.
-5.  **Prueba exhaustivamente:** Abre el `index.html` en tu navegador y prueba todos los enlaces, la responsividad en diferentes tamaños de pantalla y la funcionalidad del reproductor de podcast.
-
-Espero que esta versión mejorada se acerque mucho más a la visión que tienes para Human-IA. ¡Avísame si tienes más preguntas o necesitas ajust
