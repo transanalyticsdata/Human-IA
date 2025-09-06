@@ -517,6 +517,18 @@
         <section id="revista">
             <h2>Ediciones de la Revista</h2>
             <div class="card-container">
+                <a class="card-link" href="Edicion_8_2025-09-05/documentos/revista_8.html" title="Leer Edición 8 de Human-IA">
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <span class="badge">Edición #8</span>
+                            <img src="Edicion_8_2025-09-05/imagenes/Portada.png" alt="Portada Edición 8 Human-IA">
+                        </div>
+                        <div class="card-content">
+                            <h3>Edición 8 - 05 de Septiembre de 2025</h3>
+                            <p>En esta edición, nos adentramos en el corazón de la Ingeniería y Diseño Asistido por IA.</p>
+                        </div>
+                    </div>
+                </a>
                 <a class="card-link" href="Edicion_7_2025-07-02/documentos/revista_7.html" title="Leer Edición 7 de Human-IA">
                     <div class="card">
                         <div class="card-image-wrapper">
@@ -607,6 +619,22 @@
         <section id="podcast">
             <h2>Podcast Human-IA</h2>
             <div class="card-container">
+                <div class="card">
+                    <div class="podcast-image-overlay" onclick="togglePlay('audio8', 'icon_audio8')">
+                        <img src="Edicion_8_2025-09-05/audios/portada_capitulo8.png" alt="Carátula Podcast Capítulo 8 Human-IA">
+                        <div class="play-icon-overlay">
+                            <span id="icon_audio8">▶️</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Capítulo 8: Human-IA en Ingeniería y Diseño Asistido por IA </h3>
+                        <p>En esta edición, nos adentramos en el corazón de la Ingeniería y Diseño Asistido por IA.. Basados en nuestra Edición #8.</p>
+                        <audio id="audio8" preload="none" style="width: 100%; margin-top: 10px;" onplay="updateIcon('audio8', 'icon_audio8')" onpause="updateIcon('audio8', 'icon_audio8')">
+                            <source src="Edicion_8_2025-09-05/audios/podcast_capitulo8.mp3" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="podcast-image-overlay" onclick="togglePlay('audio7', 'icon_audio7')">
                         <img src="Edicion_7_2025-07-02/audios/portada_capitulo7.png" alt="Carátula Podcast Capítulo 7 Human-IA">
